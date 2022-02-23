@@ -39,7 +39,7 @@
 // Output: 5
 
 const objectCounter = (obj) => {
-    return obj.reduce((x, currentValue) => (x ++), 0);
+    return obj.reduce((x , currentValue) => (x = x+1), 0);
 }
 // -------------------------------------------------------------------------------------------------------
 
