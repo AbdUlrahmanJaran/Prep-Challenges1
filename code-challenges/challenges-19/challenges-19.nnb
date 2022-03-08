@@ -24,7 +24,7 @@
         {
             "language": "javascript",
             "source": [
-                "function appendAndDelete(s, t, k) {\nif (k >= s.length + t.length) return 'Yes'\nlet c = 0;\nfor (let i = 0; i < s.length; i++) {  \n        if (s[i] != t[i]) break;     \n        c++;               \n}\nlet moves = (s.length - c) + (t.length - c);\nif (k == moves) return 'Yes';\nelse if (k > moves && Math.abs(moves -k) % 2 == 0) return 'Yes';\nelse return 'No';\n}"
+                "if (k >= s.length + t.length) return 'Yes'\nlet c = 0;\nfor (let i = 0; i < s.length; i++) {  \n        if (s[i] != t[i]) break;     \n        c++;               \n}\nlet moves = (s.length - c) + (t.length - c);\nif (k == moves) return 'Yes';\nelse if (k > moves && Math.abs(moves -k) % 2 == 0) return 'Yes';\nelse return 'No';"
             ],
             "outputs": []
         },
