@@ -13,19 +13,16 @@
 // Input: 50, 9
 // Output: [50, 41, 32, 23, 14, 5, -4, 5, 14, 23, 32, 41, 50]
 //
-const recursionPattern = (int1, int2,arr = [],i=0) => {
+const recursionPattern = (int1, int2, arr = [], i=0, s=0) => {
     arr[i] = int1;
-    i++;
-    if (int1 > int2) {
-        recursionPattern(int1-int2,int2,arr,i);
-    } else {
-        arr[i] = int1 - int2;
-        i++;
-        for (let j = arr.length - 2; j >= 0; j--) {
-            arr[i] = arr[j];
-            i++;
+    i++
+    if (int1 > 0 && s == 0) {
+        recursionPattern(int1-int2,int2,arr,i,0);
+    } else if(int1 < arr[0]) {
+        recursionPattern(int1+int2,int2,arr,i,1);
         }
-    }
+        else return arr;
+    
     return arr;
 }
 
@@ -67,7 +64,10 @@ const filterLinks = (str) => {
 //
 
 const isPalindrome = (str) => {
-    // write your code here
+    let regex = /[^A-Za-z0-9]/g;
+    let strLower = str.toLowerCase().replace(regex, '');
+    let reverseStr = strLower.split('').reverse().join('');
+    return reverseStr === strLower;
 }
 // -------------------------------------------------------------------------------------------------------
 
